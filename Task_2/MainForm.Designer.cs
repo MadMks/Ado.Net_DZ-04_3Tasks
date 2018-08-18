@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBoxDescriptionOfRequest = new System.Windows.Forms.GroupBox();
-            this.labelDescriptionOfRequest = new System.Windows.Forms.Label();
             this.groupBoxMethodOfExpansion = new System.Windows.Forms.GroupBox();
             this.buttonMethodFourth = new System.Windows.Forms.Button();
             this.buttonMethodTheThird = new System.Windows.Forms.Button();
@@ -41,31 +40,26 @@
             this.buttonLinqSecond = new System.Windows.Forms.Button();
             this.buttonLinqFirst = new System.Windows.Forms.Button();
             this.dataGridViewQueryResult = new System.Windows.Forms.DataGridView();
-            this.dataGridViewAllData = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAllDataDepartment = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAllDataEmployees = new System.Windows.Forms.DataGridView();
+            this.textBoxDescriptionOfRequest = new System.Windows.Forms.TextBox();
             this.groupBoxDescriptionOfRequest.SuspendLayout();
             this.groupBoxMethodOfExpansion.SuspendLayout();
             this.groupBoxQueryLinq.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryResult)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllDataDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllDataEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxDescriptionOfRequest
             // 
-            this.groupBoxDescriptionOfRequest.Controls.Add(this.labelDescriptionOfRequest);
-            this.groupBoxDescriptionOfRequest.Location = new System.Drawing.Point(13, 347);
+            this.groupBoxDescriptionOfRequest.Controls.Add(this.textBoxDescriptionOfRequest);
+            this.groupBoxDescriptionOfRequest.Location = new System.Drawing.Point(601, 12);
             this.groupBoxDescriptionOfRequest.Name = "groupBoxDescriptionOfRequest";
-            this.groupBoxDescriptionOfRequest.Size = new System.Drawing.Size(443, 50);
+            this.groupBoxDescriptionOfRequest.Size = new System.Drawing.Size(280, 200);
             this.groupBoxDescriptionOfRequest.TabIndex = 11;
             this.groupBoxDescriptionOfRequest.TabStop = false;
             this.groupBoxDescriptionOfRequest.Text = "Описание запроса";
-            // 
-            // labelDescriptionOfRequest
-            // 
-            this.labelDescriptionOfRequest.AutoSize = true;
-            this.labelDescriptionOfRequest.Location = new System.Drawing.Point(11, 23);
-            this.labelDescriptionOfRequest.Name = "labelDescriptionOfRequest";
-            this.labelDescriptionOfRequest.Size = new System.Drawing.Size(0, 13);
-            this.labelDescriptionOfRequest.TabIndex = 0;
             // 
             // groupBoxMethodOfExpansion
             // 
@@ -73,9 +67,9 @@
             this.groupBoxMethodOfExpansion.Controls.Add(this.buttonMethodTheThird);
             this.groupBoxMethodOfExpansion.Controls.Add(this.buttonMethodSecond);
             this.groupBoxMethodOfExpansion.Controls.Add(this.buttonMethodFirst);
-            this.groupBoxMethodOfExpansion.Location = new System.Drawing.Point(12, 266);
+            this.groupBoxMethodOfExpansion.Location = new System.Drawing.Point(395, 405);
             this.groupBoxMethodOfExpansion.Name = "groupBoxMethodOfExpansion";
-            this.groupBoxMethodOfExpansion.Size = new System.Drawing.Size(444, 71);
+            this.groupBoxMethodOfExpansion.Size = new System.Drawing.Size(363, 71);
             this.groupBoxMethodOfExpansion.TabIndex = 10;
             this.groupBoxMethodOfExpansion.TabStop = false;
             this.groupBoxMethodOfExpansion.Text = "Методы расширения";
@@ -122,9 +116,9 @@
             this.groupBoxQueryLinq.Controls.Add(this.buttonLinqTheThird);
             this.groupBoxQueryLinq.Controls.Add(this.buttonLinqSecond);
             this.groupBoxQueryLinq.Controls.Add(this.buttonLinqFirst);
-            this.groupBoxQueryLinq.Location = new System.Drawing.Point(12, 185);
+            this.groupBoxQueryLinq.Location = new System.Drawing.Point(12, 405);
             this.groupBoxQueryLinq.Name = "groupBoxQueryLinq";
-            this.groupBoxQueryLinq.Size = new System.Drawing.Size(444, 71);
+            this.groupBoxQueryLinq.Size = new System.Drawing.Size(363, 71);
             this.groupBoxQueryLinq.TabIndex = 9;
             this.groupBoxQueryLinq.TabStop = false;
             this.groupBoxQueryLinq.Text = "Запросы LINQ";
@@ -164,35 +158,56 @@
             this.buttonLinqFirst.TabIndex = 0;
             this.buttonLinqFirst.Text = "1";
             this.buttonLinqFirst.UseVisualStyleBackColor = true;
+            this.buttonLinqFirst.Click += new System.EventHandler(this.buttonLinqFirst_Click);
             // 
             // dataGridViewQueryResult
             // 
             this.dataGridViewQueryResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewQueryResult.Location = new System.Drawing.Point(13, 412);
+            this.dataGridViewQueryResult.Location = new System.Drawing.Point(413, 230);
             this.dataGridViewQueryResult.Name = "dataGridViewQueryResult";
             this.dataGridViewQueryResult.RowTemplate.Height = 23;
-            this.dataGridViewQueryResult.Size = new System.Drawing.Size(443, 124);
+            this.dataGridViewQueryResult.Size = new System.Drawing.Size(468, 152);
             this.dataGridViewQueryResult.TabIndex = 8;
             // 
-            // dataGridViewAllData
+            // dataGridViewAllDataDepartment
             // 
-            this.dataGridViewAllData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAllData.Location = new System.Drawing.Point(12, 12);
-            this.dataGridViewAllData.Name = "dataGridViewAllData";
-            this.dataGridViewAllData.RowTemplate.Height = 23;
-            this.dataGridViewAllData.Size = new System.Drawing.Size(444, 164);
-            this.dataGridViewAllData.TabIndex = 7;
+            this.dataGridViewAllDataDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAllDataDepartment.Location = new System.Drawing.Point(12, 230);
+            this.dataGridViewAllDataDepartment.Name = "dataGridViewAllDataDepartment";
+            this.dataGridViewAllDataDepartment.RowTemplate.Height = 23;
+            this.dataGridViewAllDataDepartment.Size = new System.Drawing.Size(384, 152);
+            this.dataGridViewAllDataDepartment.TabIndex = 7;
+            // 
+            // dataGridViewAllDataEmployees
+            // 
+            this.dataGridViewAllDataEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAllDataEmployees.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewAllDataEmployees.Name = "dataGridViewAllDataEmployees";
+            this.dataGridViewAllDataEmployees.RowTemplate.Height = 23;
+            this.dataGridViewAllDataEmployees.Size = new System.Drawing.Size(574, 200);
+            this.dataGridViewAllDataEmployees.TabIndex = 12;
+            // 
+            // textBoxDescriptionOfRequest
+            // 
+            this.textBoxDescriptionOfRequest.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDescriptionOfRequest.Location = new System.Drawing.Point(15, 20);
+            this.textBoxDescriptionOfRequest.Multiline = true;
+            this.textBoxDescriptionOfRequest.Name = "textBoxDescriptionOfRequest";
+            this.textBoxDescriptionOfRequest.ReadOnly = true;
+            this.textBoxDescriptionOfRequest.Size = new System.Drawing.Size(250, 164);
+            this.textBoxDescriptionOfRequest.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 567);
+            this.ClientSize = new System.Drawing.Size(893, 492);
+            this.Controls.Add(this.dataGridViewAllDataEmployees);
             this.Controls.Add(this.groupBoxDescriptionOfRequest);
             this.Controls.Add(this.groupBoxMethodOfExpansion);
             this.Controls.Add(this.groupBoxQueryLinq);
             this.Controls.Add(this.dataGridViewQueryResult);
-            this.Controls.Add(this.dataGridViewAllData);
+            this.Controls.Add(this.dataGridViewAllDataDepartment);
             this.Name = "MainForm";
             this.Text = "Task 2";
             this.groupBoxDescriptionOfRequest.ResumeLayout(false);
@@ -200,7 +215,8 @@
             this.groupBoxMethodOfExpansion.ResumeLayout(false);
             this.groupBoxQueryLinq.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQueryResult)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllDataDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllDataEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,7 +224,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxDescriptionOfRequest;
-        private System.Windows.Forms.Label labelDescriptionOfRequest;
         private System.Windows.Forms.GroupBox groupBoxMethodOfExpansion;
         private System.Windows.Forms.Button buttonMethodFourth;
         private System.Windows.Forms.Button buttonMethodTheThird;
@@ -220,7 +235,9 @@
         private System.Windows.Forms.Button buttonLinqSecond;
         private System.Windows.Forms.Button buttonLinqFirst;
         private System.Windows.Forms.DataGridView dataGridViewQueryResult;
-        private System.Windows.Forms.DataGridView dataGridViewAllData;
+        private System.Windows.Forms.DataGridView dataGridViewAllDataDepartment;
+        private System.Windows.Forms.DataGridView dataGridViewAllDataEmployees;
+        private System.Windows.Forms.TextBox textBoxDescriptionOfRequest;
     }
 }
 

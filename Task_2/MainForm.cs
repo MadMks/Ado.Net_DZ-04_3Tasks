@@ -51,6 +51,32 @@ namespace Task_2
                 new Employee(6, "Ivan", "Kalyta", 22, 2),
                 new Employee(7, "Nikita", "Krotov", 27, 4)
             };
+
+
+            this.dataGridViewAllDataDepartment.DataSource = this.departments;
+            this.dataGridViewAllDataEmployees.DataSource = this.employees;
+        }
+
+        private void buttonLinqFirst_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[0];
+
+            this.dataGridViewQueryResult.DataSource
+                = (
+                from worker in employees
+                join dept in departments
+                on worker.DepId equals dept.Id
+                where dept.Country == "Ukraine"
+                where dept.City != "Donetsk"
+                select worker
+                ).ToList<Employee>();
+                  
+                  
+                  //(from dept in departments
+                  //                       where dept.Country == "Ukraine"
+                  //                       where dept.City != "Donetsk"
+                  //                       select dept)
+                  //select worker;
         }
     }
 }
