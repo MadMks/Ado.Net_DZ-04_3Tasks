@@ -12,8 +12,8 @@ namespace Task_1
 {
     public partial class MainForm : Form
     {
-        string[] tasks = null;
-        List<Person> people = null;
+        private string[] tasks = null;
+        private List<Person> people = null;
 
         public MainForm()
         {
