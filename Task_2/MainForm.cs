@@ -68,8 +68,8 @@ namespace Task_2
                 on worker.DepId equals dept.Id
                 where dept.Country == "Ukraine"
                 where dept.City != "Donetsk"
-                select worker
-                ).ToList<Employee>();
+                select new {worker.FirstName, worker.LastName}
+                ).ToList();
                   
                   
                   //(from dept in departments
