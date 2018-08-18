@@ -54,19 +54,19 @@
             // dataGridViewAllData
             // 
             this.dataGridViewAllData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAllData.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewAllData.Location = new System.Drawing.Point(12, 13);
             this.dataGridViewAllData.Name = "dataGridViewAllData";
             this.dataGridViewAllData.RowTemplate.Height = 23;
-            this.dataGridViewAllData.Size = new System.Drawing.Size(536, 150);
+            this.dataGridViewAllData.Size = new System.Drawing.Size(444, 164);
             this.dataGridViewAllData.TabIndex = 0;
             // 
             // dataGridViewQueryResult
             // 
             this.dataGridViewQueryResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewQueryResult.Location = new System.Drawing.Point(13, 417);
+            this.dataGridViewQueryResult.Location = new System.Drawing.Point(13, 413);
             this.dataGridViewQueryResult.Name = "dataGridViewQueryResult";
             this.dataGridViewQueryResult.RowTemplate.Height = 23;
-            this.dataGridViewQueryResult.Size = new System.Drawing.Size(536, 124);
+            this.dataGridViewQueryResult.Size = new System.Drawing.Size(443, 124);
             this.dataGridViewQueryResult.TabIndex = 1;
             // 
             // groupBoxQueryLinq
@@ -76,7 +76,7 @@
             this.groupBoxQueryLinq.Controls.Add(this.buttonLinqTheThird);
             this.groupBoxQueryLinq.Controls.Add(this.buttonLinqSecond);
             this.groupBoxQueryLinq.Controls.Add(this.buttonLinqFirst);
-            this.groupBoxQueryLinq.Location = new System.Drawing.Point(12, 175);
+            this.groupBoxQueryLinq.Location = new System.Drawing.Point(12, 186);
             this.groupBoxQueryLinq.Name = "groupBoxQueryLinq";
             this.groupBoxQueryLinq.Size = new System.Drawing.Size(444, 71);
             this.groupBoxQueryLinq.TabIndex = 2;
@@ -91,6 +91,7 @@
             this.buttonLinqFirst.TabIndex = 0;
             this.buttonLinqFirst.Text = "1";
             this.buttonLinqFirst.UseVisualStyleBackColor = true;
+            this.buttonLinqFirst.Click += new System.EventHandler(this.buttonLinqFirst_Click);
             // 
             // buttonLinqSecond
             // 
@@ -100,6 +101,7 @@
             this.buttonLinqSecond.TabIndex = 1;
             this.buttonLinqSecond.Text = "2";
             this.buttonLinqSecond.UseVisualStyleBackColor = true;
+            this.buttonLinqSecond.Click += new System.EventHandler(this.buttonLinqSecond_Click);
             // 
             // buttonLinqTheThird
             // 
@@ -109,6 +111,7 @@
             this.buttonLinqTheThird.TabIndex = 2;
             this.buttonLinqTheThird.Text = "3";
             this.buttonLinqTheThird.UseVisualStyleBackColor = true;
+            this.buttonLinqTheThird.Click += new System.EventHandler(this.buttonLinqTheThird_Click);
             // 
             // buttonLinqFourth
             // 
@@ -118,6 +121,7 @@
             this.buttonLinqFourth.TabIndex = 3;
             this.buttonLinqFourth.Text = "4";
             this.buttonLinqFourth.UseVisualStyleBackColor = true;
+            this.buttonLinqFourth.Click += new System.EventHandler(this.buttonLinqFourth_Click);
             // 
             // buttonLinqFifth
             // 
@@ -127,6 +131,7 @@
             this.buttonLinqFifth.TabIndex = 4;
             this.buttonLinqFifth.Text = "5";
             this.buttonLinqFifth.UseVisualStyleBackColor = true;
+            this.buttonLinqFifth.Click += new System.EventHandler(this.buttonLinqFifth_Click);
             // 
             // groupBoxMethodOfExpansion
             // 
@@ -135,7 +140,7 @@
             this.groupBoxMethodOfExpansion.Controls.Add(this.buttonMethodTheThird);
             this.groupBoxMethodOfExpansion.Controls.Add(this.buttonMethodSecond);
             this.groupBoxMethodOfExpansion.Controls.Add(this.buttonMethodFirst);
-            this.groupBoxMethodOfExpansion.Location = new System.Drawing.Point(12, 257);
+            this.groupBoxMethodOfExpansion.Location = new System.Drawing.Point(12, 267);
             this.groupBoxMethodOfExpansion.Name = "groupBoxMethodOfExpansion";
             this.groupBoxMethodOfExpansion.Size = new System.Drawing.Size(444, 71);
             this.groupBoxMethodOfExpansion.TabIndex = 5;
@@ -150,6 +155,7 @@
             this.buttonMethodFifth.TabIndex = 4;
             this.buttonMethodFifth.Text = "5";
             this.buttonMethodFifth.UseVisualStyleBackColor = true;
+            this.buttonMethodFifth.Click += new System.EventHandler(this.buttonMethodFifth_Click);
             // 
             // buttonMethodFourth
             // 
@@ -159,6 +165,7 @@
             this.buttonMethodFourth.TabIndex = 3;
             this.buttonMethodFourth.Text = "4";
             this.buttonMethodFourth.UseVisualStyleBackColor = true;
+            this.buttonMethodFourth.Click += new System.EventHandler(this.buttonMethodFourth_Click);
             // 
             // buttonMethodTheThird
             // 
@@ -168,6 +175,7 @@
             this.buttonMethodTheThird.TabIndex = 2;
             this.buttonMethodTheThird.Text = "3";
             this.buttonMethodTheThird.UseVisualStyleBackColor = true;
+            this.buttonMethodTheThird.Click += new System.EventHandler(this.buttonMethodTheThird_Click);
             // 
             // buttonMethodSecond
             // 
@@ -177,6 +185,7 @@
             this.buttonMethodSecond.TabIndex = 1;
             this.buttonMethodSecond.Text = "2";
             this.buttonMethodSecond.UseVisualStyleBackColor = true;
+            this.buttonMethodSecond.Click += new System.EventHandler(this.buttonMethodSecond_Click);
             // 
             // buttonMethodFirst
             // 
@@ -186,13 +195,14 @@
             this.buttonMethodFirst.TabIndex = 0;
             this.buttonMethodFirst.Text = "1";
             this.buttonMethodFirst.UseVisualStyleBackColor = true;
+            this.buttonMethodFirst.Click += new System.EventHandler(this.buttonMethodFirst_Click);
             // 
             // groupBoxDescriptionOfRequest
             // 
             this.groupBoxDescriptionOfRequest.Controls.Add(this.labelDescriptionOfRequest);
-            this.groupBoxDescriptionOfRequest.Location = new System.Drawing.Point(13, 334);
+            this.groupBoxDescriptionOfRequest.Location = new System.Drawing.Point(13, 348);
             this.groupBoxDescriptionOfRequest.Name = "groupBoxDescriptionOfRequest";
-            this.groupBoxDescriptionOfRequest.Size = new System.Drawing.Size(443, 67);
+            this.groupBoxDescriptionOfRequest.Size = new System.Drawing.Size(443, 50);
             this.groupBoxDescriptionOfRequest.TabIndex = 6;
             this.groupBoxDescriptionOfRequest.TabStop = false;
             this.groupBoxDescriptionOfRequest.Text = "Описание запроса";
@@ -209,12 +219,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 553);
+            this.ClientSize = new System.Drawing.Size(470, 549);
             this.Controls.Add(this.groupBoxDescriptionOfRequest);
             this.Controls.Add(this.groupBoxMethodOfExpansion);
             this.Controls.Add(this.groupBoxQueryLinq);
             this.Controls.Add(this.dataGridViewQueryResult);
             this.Controls.Add(this.dataGridViewAllData);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Task 1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllData)).EndInit();
