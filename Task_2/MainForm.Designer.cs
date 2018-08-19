@@ -131,6 +131,7 @@
             this.buttonLinqFourth.TabIndex = 3;
             this.buttonLinqFourth.Text = "4";
             this.buttonLinqFourth.UseVisualStyleBackColor = true;
+            this.buttonLinqFourth.Click += new System.EventHandler(this.buttonLinqFourth_Click);
             // 
             // buttonLinqTheThird
             // 

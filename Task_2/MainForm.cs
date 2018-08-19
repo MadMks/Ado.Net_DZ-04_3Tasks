@@ -48,7 +48,7 @@ namespace Task_2
                 new Employee(3, "Alica", "Ivanova", 43, 3),
                 new Employee(4, "Lida", "Marusyk", 22, 2),
                 new Employee(5, "Lida", "Voron", 36, 4),
-                new Employee(6, "Ivan", "Kalyta", 22, 2),
+                new Employee(6, "Ivan", "Kalyta", 24, 2),
                 new Employee(7, "Nikita", "Krotov", 27, 4)
             };
 
@@ -87,7 +87,27 @@ namespace Task_2
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[2];
 
+            this.dataGridViewQueryResult.DataSource
+                = (
+                from worker in employees
+                where worker.Age > 25
+                select worker
+                ).Take(3).ToList<Employee>();
+        }
 
+        private void buttonLinqFourth_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[3];
+
+            this.dataGridViewQueryResult.DataSource
+                = (
+                from worker in employees
+                join dept in departments
+                on worker.DepId equals dept.Id
+                where dept.City == "Kyiv"
+                where worker.Age > 23
+                select new {worker.FirstName, worker.LastName, worker.Age}
+                ).ToList();
         }
     }
 }
