@@ -70,13 +70,24 @@ namespace Task_2
                 where dept.City != "Donetsk"
                 select new {worker.FirstName, worker.LastName}
                 ).ToList();
-                  
-                  
-                  //(from dept in departments
-                  //                       where dept.Country == "Ukraine"
-                  //                       where dept.City != "Donetsk"
-                  //                       select dept)
-                  //select worker;
+        }
+
+        private void buttonLinqSecond_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[1];
+
+            this.dataGridViewQueryResult.DataSource
+                = (
+                from dept in departments
+                select new {dept.Country}
+                ).Distinct().ToList();
+        }
+
+        private void buttonLinqTheThird_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[2];
+
+
         }
     }
 }

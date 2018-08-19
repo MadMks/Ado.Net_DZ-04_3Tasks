@@ -140,6 +140,7 @@
             this.buttonLinqTheThird.TabIndex = 2;
             this.buttonLinqTheThird.Text = "3";
             this.buttonLinqTheThird.UseVisualStyleBackColor = true;
+            this.buttonLinqTheThird.Click += new System.EventHandler(this.buttonLinqTheThird_Click);
             // 
             // buttonLinqSecond
             // 
@@ -149,6 +150,7 @@
             this.buttonLinqSecond.TabIndex = 1;
             this.buttonLinqSecond.Text = "2";
             this.buttonLinqSecond.UseVisualStyleBackColor = true;
+            this.buttonLinqSecond.Click += new System.EventHandler(this.buttonLinqSecond_Click);
             // 
             // buttonLinqFirst
             // 
