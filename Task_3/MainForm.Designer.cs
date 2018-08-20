@@ -191,6 +191,8 @@
             this.Controls.Add(this.groupBoxQueryLinq);
             this.Controls.Add(this.dataGridViewQueryResult);
             this.Controls.Add(this.dataGridViewAllDataDepartment);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Task 3";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllDataEmployees)).EndInit();

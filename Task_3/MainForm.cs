@@ -22,6 +22,12 @@ namespace Task_3
             InitializeComponent();
 
             this.Load += MainForm_Load;
+            this.textBoxDescriptionOfRequest.TextChanged += TextBoxDescriptionOfRequest_TextChanged;
+        }
+
+        private void TextBoxDescriptionOfRequest_TextChanged(object sender, EventArgs e)
+        {
+            this.dataGridViewQueryResult.DataSource = null;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -64,8 +70,6 @@ namespace Task_3
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[0];
 
-            this.dataGridViewQueryResult.DataSource = null;
-
             this.dataGridViewQueryResult.DataSource
                 = (
                 from worker in employees
@@ -81,8 +85,6 @@ namespace Task_3
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[1];
 
-            this.dataGridViewQueryResult.DataSource = null;
-
             this.dataGridViewQueryResult.DataSource
                 = (
                 from worker in employees
@@ -95,8 +97,6 @@ namespace Task_3
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[2];
 
-            this.dataGridViewQueryResult.DataSource = null;
-
             this.dataGridViewQueryResult.DataSource
                 = (
                 from worker in employees
@@ -108,8 +108,6 @@ namespace Task_3
         private void buttonMethodFirst_Click(object sender, EventArgs e)
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[0];
-
-            this.dataGridViewQueryResult.DataSource = null;
 
             // example #1
             //this.dataGridViewQueryResult.DataSource
@@ -142,8 +140,6 @@ namespace Task_3
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[1];
 
-            this.dataGridViewQueryResult.DataSource = null;
-
             this.dataGridViewQueryResult.DataSource
                 = this.employees
                 .OrderByDescending(emp => emp.Age)
@@ -154,8 +150,6 @@ namespace Task_3
         private void buttonMethodTheThird_Click(object sender, EventArgs e)
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[2];
-
-            this.dataGridViewQueryResult.DataSource = null;
 
             this.dataGridViewQueryResult.DataSource
                 = this.employees
