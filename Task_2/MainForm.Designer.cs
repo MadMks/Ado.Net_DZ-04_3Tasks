@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxDescriptionOfRequest = new System.Windows.Forms.GroupBox();
+            this.textBoxDescriptionOfRequest = new System.Windows.Forms.TextBox();
             this.groupBoxMethodOfExpansion = new System.Windows.Forms.GroupBox();
             this.buttonMethodFourth = new System.Windows.Forms.Button();
             this.buttonMethodTheThird = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.dataGridViewQueryResult = new System.Windows.Forms.DataGridView();
             this.dataGridViewAllDataDepartment = new System.Windows.Forms.DataGridView();
             this.dataGridViewAllDataEmployees = new System.Windows.Forms.DataGridView();
-            this.textBoxDescriptionOfRequest = new System.Windows.Forms.TextBox();
             this.groupBoxDescriptionOfRequest.SuspendLayout();
             this.groupBoxMethodOfExpansion.SuspendLayout();
             this.groupBoxQueryLinq.SuspendLayout();
@@ -60,6 +60,16 @@
             this.groupBoxDescriptionOfRequest.TabIndex = 11;
             this.groupBoxDescriptionOfRequest.TabStop = false;
             this.groupBoxDescriptionOfRequest.Text = "Описание запроса";
+            // 
+            // textBoxDescriptionOfRequest
+            // 
+            this.textBoxDescriptionOfRequest.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDescriptionOfRequest.Location = new System.Drawing.Point(15, 20);
+            this.textBoxDescriptionOfRequest.Multiline = true;
+            this.textBoxDescriptionOfRequest.Name = "textBoxDescriptionOfRequest";
+            this.textBoxDescriptionOfRequest.ReadOnly = true;
+            this.textBoxDescriptionOfRequest.Size = new System.Drawing.Size(250, 164);
+            this.textBoxDescriptionOfRequest.TabIndex = 1;
             // 
             // groupBoxMethodOfExpansion
             // 
@@ -82,6 +92,7 @@
             this.buttonMethodFourth.TabIndex = 3;
             this.buttonMethodFourth.Text = "4";
             this.buttonMethodFourth.UseVisualStyleBackColor = true;
+            this.buttonMethodFourth.Click += new System.EventHandler(this.buttonMethodFourth_Click);
             // 
             // buttonMethodTheThird
             // 
@@ -91,6 +102,7 @@
             this.buttonMethodTheThird.TabIndex = 2;
             this.buttonMethodTheThird.Text = "3";
             this.buttonMethodTheThird.UseVisualStyleBackColor = true;
+            this.buttonMethodTheThird.Click += new System.EventHandler(this.buttonMethodTheThird_Click);
             // 
             // buttonMethodSecond
             // 
@@ -192,16 +204,6 @@
             this.dataGridViewAllDataEmployees.Size = new System.Drawing.Size(574, 200);
             this.dataGridViewAllDataEmployees.TabIndex = 12;
             // 
-            // textBoxDescriptionOfRequest
-            // 
-            this.textBoxDescriptionOfRequest.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxDescriptionOfRequest.Location = new System.Drawing.Point(15, 20);
-            this.textBoxDescriptionOfRequest.Multiline = true;
-            this.textBoxDescriptionOfRequest.Name = "textBoxDescriptionOfRequest";
-            this.textBoxDescriptionOfRequest.ReadOnly = true;
-            this.textBoxDescriptionOfRequest.Size = new System.Drawing.Size(250, 164);
-            this.textBoxDescriptionOfRequest.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +215,8 @@
             this.Controls.Add(this.groupBoxQueryLinq);
             this.Controls.Add(this.dataGridViewQueryResult);
             this.Controls.Add(this.dataGridViewAllDataDepartment);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Task 2";
             this.groupBoxDescriptionOfRequest.ResumeLayout(false);

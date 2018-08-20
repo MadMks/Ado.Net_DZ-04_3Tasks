@@ -120,7 +120,8 @@ namespace Task_2
                 .SelectMany(emp => departments
                     .Where(dept => dept.Id == emp.DepId
                         && dept.Country == "Ukraine"
-                        && dept.City != "Donetsk").Select(worker => emp)
+                        && dept.City != "Donetsk")
+                        .Select(worker => new { emp.FirstName, emp.LastName})
                 ).ToList();
         }
 
@@ -132,6 +133,30 @@ namespace Task_2
                 = this.departments
                 .Select(dept => new { dept.Country})
                 .Distinct().ToList();
+        }
+
+        private void buttonMethodTheThird_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[2];
+
+            this.dataGridViewQueryResult.DataSource
+                = this.employees
+                .Where(emp => emp.Age > 25)
+                .Take(3).ToList<Employee>();
+        }
+
+        private void buttonMethodFourth_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[3];
+
+            this.dataGridViewQueryResult.DataSource
+                = this.employees
+                .SelectMany(emp => departments
+                    .Where(dept => dept.Id == emp.DepId
+                        && dept.City == "Kyiv"
+                        && emp.Age > 23)
+                        .Select(worker => new { emp.FirstName, emp.LastName, emp.Age })
+                ).ToList();
         }
     }
 }
