@@ -98,6 +98,7 @@
             this.buttonMethodTheThird.TabIndex = 2;
             this.buttonMethodTheThird.Text = "3";
             this.buttonMethodTheThird.UseVisualStyleBackColor = true;
+            this.buttonMethodTheThird.Click += new System.EventHandler(this.buttonMethodTheThird_Click);
             // 
             // buttonMethodSecond
             // 
@@ -107,6 +108,7 @@
             this.buttonMethodSecond.TabIndex = 1;
             this.buttonMethodSecond.Text = "2";
             this.buttonMethodSecond.UseVisualStyleBackColor = true;
+            this.buttonMethodSecond.Click += new System.EventHandler(this.buttonMethodSecond_Click);
             // 
             // buttonMethodFirst
             // 
@@ -116,6 +118,7 @@
             this.buttonMethodFirst.TabIndex = 0;
             this.buttonMethodFirst.Text = "1";
             this.buttonMethodFirst.UseVisualStyleBackColor = true;
+            this.buttonMethodFirst.Click += new System.EventHandler(this.buttonMethodFirst_Click);
             // 
             // groupBoxQueryLinq
             // 

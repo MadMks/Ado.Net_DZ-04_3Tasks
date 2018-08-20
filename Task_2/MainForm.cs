@@ -22,6 +22,12 @@ namespace Task_2
             InitializeComponent();
 
             this.Load += MainForm_Load;
+            this.textBoxDescriptionOfRequest.TextChanged += TextBoxDescriptionOfRequest_TextChanged;
+        }
+
+        private void TextBoxDescriptionOfRequest_TextChanged(object sender, EventArgs e)
+        {
+            this.dataGridViewQueryResult.DataSource = null;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -68,7 +74,7 @@ namespace Task_2
                 on worker.DepId equals dept.Id
                 where dept.Country == "Ukraine"
                 where dept.City != "Donetsk"
-                select new {worker.FirstName, worker.LastName}
+                select new {worker.FirstName, worker.LastName, dept.Country, dept.City}
                 ).ToList();
         }
 
@@ -114,15 +120,31 @@ namespace Task_2
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[0];
 
+            // example #1
+            //this.dataGridViewQueryResult.DataSource
+            //    =
+            //    this.employees
+            //    .SelectMany(emp => departments
+            //        .Where(dept => dept.Id == emp.DepId
+            //            && dept.Country == "Ukraine"
+            //            && dept.City != "Donetsk")
+            //            .Select(worker => new { emp.FirstName, emp.LastName})
+            //    ).ToList();
+
+            // example #2
             this.dataGridViewQueryResult.DataSource
                 =
-                this.employees
-                .SelectMany(emp => departments
-                    .Where(dept => dept.Id == emp.DepId
-                        && dept.Country == "Ukraine"
-                        && dept.City != "Donetsk")
-                        .Select(worker => new { emp.FirstName, emp.LastName})
-                ).ToList();
+                this.employees.Join(departments, emp => emp.DepId, dep => dep.Id,
+                (emp, dep) => new
+                {
+                    FirstName = emp.FirstName,
+                    LastName = emp.LastName,
+                    Country = dep.Country,
+                    City = dep.City
+                })
+                .Where(depart => depart.Country == "Ukraine"
+                && depart.City != "Donetsk")
+                .ToList();
         }
 
         private void buttonMethodSecond_Click(object sender, EventArgs e)

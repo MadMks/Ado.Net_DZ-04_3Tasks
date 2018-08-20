@@ -64,6 +64,8 @@ namespace Task_3
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[0];
 
+            this.dataGridViewQueryResult.DataSource = null;
+
             this.dataGridViewQueryResult.DataSource
                 = (
                 from worker in employees
@@ -71,13 +73,15 @@ namespace Task_3
                   on worker.DepId equals dept.Id
                 where dept.Country == "Ukraine"
                 orderby worker.FirstName, worker.LastName
-                select worker
-                ).ToList<Employee>();
+                select new {worker.FirstName, worker.LastName, dept.Country}
+                ).ToList();
         }
 
         private void buttonLinqSecond_Click(object sender, EventArgs e)
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[1];
+
+            this.dataGridViewQueryResult.DataSource = null;
 
             this.dataGridViewQueryResult.DataSource
                 = (
@@ -91,12 +95,73 @@ namespace Task_3
         {
             this.textBoxDescriptionOfRequest.Text = this.tasks[2];
 
+            this.dataGridViewQueryResult.DataSource = null;
+
             this.dataGridViewQueryResult.DataSource
                 = (
                 from worker in employees
                 group worker by worker.Age into g
                 select new { Age = g.Key, Quantity = g.Count() }
                 ).ToList();
+        }
+
+        private void buttonMethodFirst_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[0];
+
+            this.dataGridViewQueryResult.DataSource = null;
+
+            // example #1
+            //this.dataGridViewQueryResult.DataSource
+            //    = this.employees
+            //    .SelectMany(emp => departments
+            //        .Where(dept => dept.Id == emp.DepId
+            //            && dept.Country == "Ukraine")
+            //            .Select(worker => emp)
+            //    ).Select(employ => new { employ.FirstName, employ.LastName, employ.DepId})
+            //    .OrderBy(w => w.FirstName)
+            //    .ThenBy(w => w.LastName)
+            //    .ToList();
+
+            // example #2
+            this.dataGridViewQueryResult.DataSource
+                = this.employees.Join(departments, emp => emp.DepId, d => d.Id,
+                    (emp, d) => new
+                    {
+                        FirstName = emp.FirstName,
+                        LastName = emp.LastName,
+                        Country = d.Country
+                    })
+                    .Where(c => c.Country == "Ukraine")
+                    .OrderBy(w => w.FirstName)
+                    .ThenBy(w => w.LastName)
+                    .ToList();
+        }
+
+        private void buttonMethodSecond_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[1];
+
+            this.dataGridViewQueryResult.DataSource = null;
+
+            this.dataGridViewQueryResult.DataSource
+                = this.employees
+                .OrderByDescending(emp => emp.Age)
+                .Select(emp => new { emp.Id, emp.FirstName, emp.LastName, emp.Age })
+                .ToList();
+        }
+
+        private void buttonMethodTheThird_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[2];
+
+            this.dataGridViewQueryResult.DataSource = null;
+
+            this.dataGridViewQueryResult.DataSource
+                = this.employees
+                .GroupBy(emp => emp.Age)
+                .Select(g => new { Age = g.Key, Quantity = g.Count() })
+                .ToList();
         }
     }
 }
