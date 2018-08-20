@@ -109,5 +109,29 @@ namespace Task_2
                 select new {worker.FirstName, worker.LastName, worker.Age}
                 ).ToList();
         }
+
+        private void buttonMethodFirst_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[0];
+
+            this.dataGridViewQueryResult.DataSource
+                =
+                this.employees
+                .SelectMany(emp => departments
+                    .Where(dept => dept.Id == emp.DepId
+                        && dept.Country == "Ukraine"
+                        && dept.City != "Donetsk").Select(worker => emp)
+                ).ToList();
+        }
+
+        private void buttonMethodSecond_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[1];
+
+            this.dataGridViewQueryResult.DataSource
+                = this.departments
+                .Select(dept => new { dept.Country})
+                .Distinct().ToList();
+        }
     }
 }
