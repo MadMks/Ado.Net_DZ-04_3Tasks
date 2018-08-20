@@ -28,7 +28,7 @@ namespace Task_3
         {
             this.tasks = new string[] {
                 "Упорядочить имена и фамилии сотрудников по алфавиту, "
-                + "которые проживабт в Украине.",
+                + "которые проживают в Украине.",
                 "Отсортировать сотрудников по возрастам, по убыванию."
                 + "Вывести Id, FirstName, LastName, Age.",
                 "Сгруппировать студентов по возрасту."
@@ -45,18 +45,58 @@ namespace Task_3
 
             this.employees = new List<Employee>()
             {
-                new Employee(1, "Tamara", "Ivanova", 22, 2),
-                new Employee(2, "Nikita", "Larin", 33, 1),
-                new Employee(3, "Alica", "Ivanova", 43, 3),
-                new Employee(4, "Lida", "Marusyk", 22, 2),
-                new Employee(5, "Lida", "Voron", 36, 4),
-                new Employee(6, "Ivan", "Kalyta", 22, 2),
-                new Employee(7, "Nikita", "Krotov", 27, 4)
+                new Employee(1, "Nikola", "Tesla", 58, 2),
+                new Employee(2, "Tamara", "Ivanova", 22, 2),
+                new Employee(3, "Nikita", "Larin", 33, 1),
+                new Employee(4, "Alica", "Ivanova", 43, 3),
+                new Employee(5, "Lida", "Marusyk", 22, 2),
+                new Employee(6, "Lida", "Voron", 36, 4),
+                new Employee(7, "Ivan", "Kalyta", 22, 2),
+                new Employee(8, "Nikita", "Krotov", 27, 4)
             };
 
 
             this.dataGridViewAllDataDepartment.DataSource = this.departments;
             this.dataGridViewAllDataEmployees.DataSource = this.employees;
+        }
+
+        private void buttonLinqFirst_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[0];
+
+            this.dataGridViewQueryResult.DataSource
+                = (
+                from worker in employees
+                join dept in departments
+                  on worker.DepId equals dept.Id
+                where dept.Country == "Ukraine"
+                orderby worker.FirstName, worker.LastName
+                select worker
+                ).ToList<Employee>();
+        }
+
+        private void buttonLinqSecond_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[1];
+
+            this.dataGridViewQueryResult.DataSource
+                = (
+                from worker in employees
+                orderby worker.Age descending
+                select new { worker.Id, worker.FirstName, worker.LastName, worker.Age }
+                ).ToList();
+        }
+
+        private void buttonLinqTheThird_Click(object sender, EventArgs e)
+        {
+            this.textBoxDescriptionOfRequest.Text = this.tasks[2];
+
+            this.dataGridViewQueryResult.DataSource
+                = (
+                from worker in employees
+                group worker by worker.Age into g
+                select new { Age = g.Key, Quantity = g.Count() }
+                ).ToList();
         }
     }
 }
