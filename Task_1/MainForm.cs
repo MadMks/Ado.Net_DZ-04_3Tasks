@@ -77,7 +77,7 @@ namespace Task_1
                 = (
                 from person in people
                 where person.City == "Kyiv"
-                select new {person.Name}
+                select new {person.Name, person.City}
                 ).ToList();
         }
 
@@ -130,7 +130,8 @@ namespace Task_1
 
             this.dataGridViewQueryResult.DataSource
                 = people.Where(p => p.City == "Kyiv")
-                .Select(p => new { p.Name }).ToList();
+                .Select(p => new { p.Name, p.City })
+                .ToList();
         }
 
         private void buttonMethodFourth_Click(object sender, EventArgs e)

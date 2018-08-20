@@ -54,6 +54,7 @@
             this.dataGridViewAllDataEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAllDataEmployees.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewAllDataEmployees.Name = "dataGridViewAllDataEmployees";
+            this.dataGridViewAllDataEmployees.ReadOnly = true;
             this.dataGridViewAllDataEmployees.RowTemplate.Height = 23;
             this.dataGridViewAllDataEmployees.Size = new System.Drawing.Size(574, 220);
             this.dataGridViewAllDataEmployees.TabIndex = 18;
@@ -167,6 +168,7 @@
             this.dataGridViewQueryResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewQueryResult.Location = new System.Drawing.Point(413, 249);
             this.dataGridViewQueryResult.Name = "dataGridViewQueryResult";
+            this.dataGridViewQueryResult.ReadOnly = true;
             this.dataGridViewQueryResult.RowTemplate.Height = 23;
             this.dataGridViewQueryResult.Size = new System.Drawing.Size(468, 168);
             this.dataGridViewQueryResult.TabIndex = 14;
@@ -176,6 +178,7 @@
             this.dataGridViewAllDataDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAllDataDepartment.Location = new System.Drawing.Point(12, 249);
             this.dataGridViewAllDataDepartment.Name = "dataGridViewAllDataDepartment";
+            this.dataGridViewAllDataDepartment.ReadOnly = true;
             this.dataGridViewAllDataDepartment.RowTemplate.Height = 23;
             this.dataGridViewAllDataDepartment.Size = new System.Drawing.Size(384, 168);
             this.dataGridViewAllDataDepartment.TabIndex = 13;
